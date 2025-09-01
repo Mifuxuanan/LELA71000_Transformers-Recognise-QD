@@ -50,16 +50,16 @@ Key scripts:
     - Two pooling strategies  
     - Different hidden sizes
     - **Hyperparameters** such as `d_model`, number of layers (`n_layers`), and number of attention heads (`n_heads`) can be modified directly in the parameter setting cells. For example:  
-  ```python
-  d_model = 256
-  n_layers = 2
-  n_heads = 2
-  ```
-    - Training is executed via the following line, which runs the main training loop with the selected configuration:
-```python
-  all_preds1_1, topk_probs1_1, valid_accuracies1_1, valid_macroF1s1_1, valid_perF1s1_1 = main(
-    train_data1, valid_data1, epoch, float("-inf"), early_stop, topk, with_mask=True)
-```
+      ```python
+      d_model = 256
+      n_layers = 2
+      n_heads = 2
+      ```
+  - Training is executed via the following line, which runs the main training loop with the selected configuration:
+    ```python
+      all_preds1_1, topk_probs1_1, valid_accuracies1_1, valid_macroF1s1_1, valid_perF1s1_1 = main(
+        train_data1, valid_data1, epoch, float("-inf"), early_stop, topk, with_mask=True)
+    ```
   - Extracts and stores internal representations, including:  
     - Attention weights  
     - QK score logits (pre-softmax logits)  
