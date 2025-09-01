@@ -43,12 +43,23 @@ This folder contains the **main experiments of the dissertation**.
 
 Key scripts:  
 - **`explain_nn_model.ipynb`**  
-  The central script of this project.  
+  The central script of this project, which allows you to reproduce the main results by training small-sized Transformers on the FOL datasets.  
   - Evaluates small-sized Transformers with different configurations:  
     - Number of layers  
     - Number of attention heads  
     - Two pooling strategies  
-    - Different hidden sizes  
+    - Different hidden sizes
+    - **Hyperparameters** such as `d_model`, number of layers (`n_layers`), and number of attention heads (`n_heads`) can be modified directly in the parameter setting cells. For example:  
+  ```python
+  d_model = 256
+  n_layers = 2
+  n_heads = 2
+  ```
+    - Training is executed via the following line, which runs the main training loop with the selected configuration:
+```python
+  all_preds1_1, topk_probs1_1, valid_accuracies1_1, valid_macroF1s1_1, valid_perF1s1_1 = main(
+    train_data1, valid_data1, epoch, float("-inf"), early_stop, topk, with_mask=True)
+```
   - Extracts and stores internal representations, including:  
     - Attention weights  
     - QK score logits (pre-softmax logits)  
