@@ -72,12 +72,8 @@ Key scripts:
   - Generates plots and heatmaps for deeper inspection of model behaviour.  
   - Also requires running in **Jupyter notebooks**.  
 
-### FOL2NS
-This folder contains experiments on the **FOL2NS datasets**, extending the same experimental pipeline to a slightly different formal representation.  
-- Similar to `FOL/`, it provides training and evaluation scripts as well as data extraction routines.  
-
 ---
-### FOL2NS (within Small_Transformers)
+### FOL2NS
 This folder contains experiments evaluating a **2-layer, 2-head (2L2H) Transformer** on the **FOL2NS datasets**.  
 - **`Small_Transformer_on_FOL2NS.ipynb`**  
   - Mainly trains and evaluates a 2L2H Transformer on the two FOL2NS dataset types.
